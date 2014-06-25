@@ -18,3 +18,6 @@ class FuzzyPoint(object):
 
     def multiply_function_of_belonging(self, coefficient):
         self.__func_of_belonging *= coefficient
+
+    def __repr__(self):
+        return repr(self.__coordinate) + ' : ' + repr(self.__func_of_belonging)

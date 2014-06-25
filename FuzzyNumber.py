@@ -35,7 +35,7 @@ class FuzzyNumber(object):
                         if right_nearest_point.get_coordinate() > fuzzy_point.get_coordinate():
                             right_nearest_point = fuzzy_point
             if left_nearest_point is None or right_nearest_point is None:
-                raise Exception('Can\'t perform linear interpolation')
+                raise Exception('Can\'t perform linear interpolation.')
 
             func_of_belonging = \
                 (right_nearest_point.get_func_of_belonging() - left_nearest_point.get_func_of_belonging()) * (

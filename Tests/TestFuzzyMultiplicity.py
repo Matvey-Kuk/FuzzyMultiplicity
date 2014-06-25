@@ -1,5 +1,3 @@
-__author__ = 'bombastic'
-
 import unittest
 
 from FuzzyNumber import *
@@ -46,4 +44,17 @@ class TestFuzzyMultiplicity(unittest.TestCase):
 
     def test_get_straight_key_points(self):
         fuzzy_multiplicity = self.generate_test_multiplicity()
-        self.assertEqual(fuzzy_multiplicity.get_straight_key_points((1,4), 1), [(1, 4), (2, 5), (3, 6)])
+        self.assertEqual(fuzzy_multiplicity.get_straight_key_points((1, 4), 1), [(1, 4), (2, 5), (3, 6)])
+
+    def test_get_straight_key_points_perpendicular(self):
+        fuzzy_multiplicity = self.generate_test_multiplicity()
+        self.assertEqual(
+            fuzzy_multiplicity.get_straight_key_points((1.5, 5), -1),
+            [(1, 5.5), (2, 4.5), (2.5, 4), (1.5, 5)]
+        )
+
+    # def test_get_result(self):
+    #     fuzzy_multiplicity = self.generate_test_multiplicity()
+    #     result_number = fuzzy_multiplicity.get_result()
+    #     result_number.normalize()
+    #     print(result_number.get_points())
